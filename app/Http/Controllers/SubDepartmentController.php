@@ -56,4 +56,10 @@ class SubDepartmentController extends Controller
 
         return redirect()->route('sub-departments.index')->with('success', 'Deleted!');
     }
+
+    public function get_sd($id)
+    {
+        $subDepartments = SubDepartment::where('department_id', $id)->get();
+        return $subDepartments;
+    }
 }

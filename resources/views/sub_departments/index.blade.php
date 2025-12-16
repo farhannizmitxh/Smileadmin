@@ -25,13 +25,28 @@
                     <tr>
                         <td>{{ $d->name }}</td>
                         <td>{{ $d->department->name }}</td>
-                        <td>
-                            <a href="{{ route('sub-departments.edit', $d->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                        <td class="d-flex text-center">
 
-                            <form action="{{ route('sub-departments.destroy', $d->id) }}" method="POST" class="d-inline">
-                                @csrf @method('DELETE')
-                                <button class="btn btn-danger btn-sm" onclick="return confirm('Hapus?')">Hapus</button>
+                            <a href="{{ route('sub-departments.edit', $d->id) }}" 
+                               class="btn btn-sm"
+                               style="background-color: #f6c23e; color: white;">
+                               Edit
+                            </a>
+
+                            &nbsp;
+
+                            <form action="{{ route('sub-departments.destroy', $d->id) }}" 
+                                  method="POST" class="mb-0">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" 
+                                    class="btn btn-sm"
+                                    style="background-color: #e74a3b; color: white;"
+                                    onclick="return confirm('Yakin ingin menghapus?')">
+                                    Delete
+                                </button>
                             </form>
+
                         </td>
                     </tr>
                     @endforeach
@@ -44,3 +59,4 @@
 
 </div>
 @endsection
+

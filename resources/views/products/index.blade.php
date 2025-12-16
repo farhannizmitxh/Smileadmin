@@ -60,7 +60,7 @@
 
                         <div class="mb-4">
                             <label class="form-label fw-semibold">Sub Department</label>
-                            <select id="product_category" name="product_category" class="form-select form-select-lg" required>
+                            <select id="sub_department" name="sub_department" class="form-select form-select-lg" required>
                                 <option value="">-- Pilih Sub Department --</option>
                             </select>
                         </div>
@@ -103,7 +103,9 @@
                                     <td>{{ $prod->stock }}</td>
                                     <td>{{ $prod->main_category }}</td>
                                     <td>{{ $prod->department }}</td>
-                                    <td>{{ $prod->product_category }}</td>
+                                    <td>
+                                        {{ $subdepartments->where('id', $prod->sub_department)->first()->name ?? '-' }}
+                                    </td>
                                     <td class="d-flex">
                                         <a href="/products/{{ $prod->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
                                         &nbsp;
@@ -127,3 +129,29 @@
     </div>
 </div>
 @endsection
+
+@push('script')
+<script>
+    $('#department').on('change', function () {
+        let dept_id = $(this).val();
+        $('#sub_department').html('<option value="">Loading...</option>');
+
+        if (dept_id) {
+            $.ajax({
+                url: '/get-subdepartments/' + dept_id,
+                type: 'GET',
+                success: function (data) {
+                    $('#sub_department').empty();
+                    $('#sub_department').append('<option value="">-- Pilih Sub Departemen --</option>');
+                    console.log(data);
+                    $.each(data, function (key, sub) {
+                        $('#sub_department').append('<option value="'+ sub.id +'">'+ sub.name +'</option>');
+                    });
+                }
+            });
+        } else {
+            $('#sub_department').html('<option value="">-- Pilih Sub Departemen --</option>');
+        }
+    });
+</script>
+@endpush

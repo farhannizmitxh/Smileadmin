@@ -13,5 +13,6 @@ Route::resource('products', ProductController::class);
 Route::resource('departments', DepartmentController::class);
 
 Route::resource('sub-departments', SubDepartmentController::class);
+Route::get('/get-subdepartments/{id}', [SubDepartmentController::class, 'get_sd']);
 
 // });

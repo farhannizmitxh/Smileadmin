@@ -18,7 +18,17 @@ class Product extends Model
         'image',
         'main_category',
         'department',
-        'product_category',
+        'sub_department',
         'stock',
     ];
+
+    public function departements()
+    {
+        return $this->belongsTo(Department::class, 'department_id');
+    }
+    
+    public function subDepartements()
+    {
+        return $this->belongsTo(SubDepartment::class, 'sub_department_id');
+    }
 }

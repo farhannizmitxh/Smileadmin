@@ -32,7 +32,7 @@ class ProductController extends Controller
             'image' => 'nullable|string',
             'main_category' => 'required|string',
             'department' => 'nullable|string',
-            'product_category' => 'nullable|string',
+            'sub_department' => 'nullable|string',
         ]);
 
         Product::create($validated);
