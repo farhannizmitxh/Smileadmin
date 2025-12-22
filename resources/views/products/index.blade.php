@@ -9,7 +9,7 @@
         <div class="col-lg-8 col-md-10 mb-4">
             <div class="card shadow-lg border-0">
                 <div class="card-header text-white" style="background:#5ebeed;">
-                    <h4 class="mb-0">Form Produk</h4>
+                    <h4 class="mb-0 text-white fw-semibold">Form Produk</h4>
                 </div>
 
                 <div class="card-body p-4">
@@ -76,7 +76,7 @@
         <!-- END FORM -->
 
         <!-- TABLE LIST PRODUK -->
-        <div class="col-lg-10 col-md-12">
+        <div class="col-lg-10 col-md-12 mt-5">
             <div class="card shadow-sm border-0">
                 <div class="table-responsive p-3">
 

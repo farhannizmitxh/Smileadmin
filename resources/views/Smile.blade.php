@@ -62,7 +62,7 @@
                 <div class="app-brand demo">
                     <a href="index.html" class="app-brand-link">
                         <span class="app-brand-logo demo">
-                            <img src="{{ asset('assets/img/logo/logo_pillo1.png') }}" alt="Logo Pillo" width="120" />
+                            <img src="{{ asset('assets/img/logo/logo_ms.png') }}" alt="Logo Pillo" width="100" class="ms-3 mt-2 mb-5" />
                         </span>
                     </a>
 
@@ -85,42 +85,44 @@
                             </div>
                         </a>
                         <ul class="menu-sub">
-                            <li class="menu-item active">
-                                <a href="index.html" class="menu-link">
+                            <li class="menu-item ">
+                                <a href="products" class="menu-link">
                                     <div class="text-truncate" data-i18n="Analytics">
-                                        Analytics
+                                        Products
                                     </div>
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/dashboards-crm.html"
+                                <a href="departments"
                                     target="_blank" class="menu-link">
-                                    <div class="text-truncate" data-i18n="CRM">CRM</div>
+                                    <div class="text-truncate" data-i18n="CRM">Departments</div>
 
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-ecommerce-dashboard.html"
+                                <a href="sub-departments"
                                     target="_blank" class="menu-link">
                                     <div class="text-truncate" data-i18n="eCommerce">
-                                        eCommerce
+                                        Sub-departments
                                     </div>
 
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-logistics-dashboard.html"
+                                <a href="javascript:void(0);"
                                     target="_blank" class="menu-link">
                                     <div class="text-truncate" data-i18n="Logistics">
-                                        Logistics
+                                        Services
                                     </div>
 
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-academy-dashboard.html"
+                                <a href="javascript:void(0);"
                                     target="_blank" class="menu-link">
-                                    <div class="text-truncate" data-i18n="Academy">Academy</div>
+                                    <div class="text-truncate" data-i18n="Logistics">
+                                        News
+                                    </div>
 
                                 </a>
                             </li>
