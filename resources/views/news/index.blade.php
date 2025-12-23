@@ -59,7 +59,7 @@
                 <tr>
                     <th>#</th>
                     <th>Judul</th>
-                    <th>Excerpt</th>
+                    <th>Deskripsi</th>
                     <th>Tanggal</th>
                     <th>Penulis</th>
                     <th>Aksi</th>

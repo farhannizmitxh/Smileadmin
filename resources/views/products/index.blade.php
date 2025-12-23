@@ -8,10 +8,9 @@
         <!-- Form tambah produk -->
         <div class="col-lg-14 col-md-12 mb-8">
             <div class="card shadow-lg border-0">
-                <div class="card-header text-white" style="background:#5ebeed;">
-                    <h4 class="mb-0 text-white">Form Produk</h4>
+            <div class="card-header text-white" style="background:#5ebeed;">
                 </div>
-
+                <h4 class="mb-0 text-white">Form Produk</h4>
                 <div class="card-body p-4">
 
                     <form action="/products" method="POST">
