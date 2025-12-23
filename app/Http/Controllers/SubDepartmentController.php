@@ -10,8 +10,9 @@ class SubDepartmentController extends Controller
 {
     public function index()
     {
-        $data = SubDepartment::with('department')->get();
-        return view('sub_departments.index', compact('data'));
+    $data = SubDepartment::with('department')->get();
+    $departments = Department::all();
+    return view('sub_departments.index', compact('data', 'departments'));
     }
 
     public function create()

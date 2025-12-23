@@ -14,7 +14,6 @@ class ProductController extends Controller
         $products = Product::all();
         $departments = Department::all();
         $subdepartments = SubDepartment::all();
-
         return view('products.index', compact('products', 'departments', 'subdepartments'));
     }
 
@@ -31,8 +30,8 @@ class ProductController extends Controller
             'stock' => 'required|integer',
             'image' => 'nullable|string',
             'main_category' => 'required|string',
-            'department' => 'nullable|string',
-            'sub_department' => 'nullable|string',
+            'department_id' => 'required|exists:departments,id',
+            'sub_department_id' => 'required|exists:sub_departments,id',
         ]);
 
         Product::create($validated);

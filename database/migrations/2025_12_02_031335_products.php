@@ -8,17 +8,26 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->id();      // contoh: "mandiri-4"
-            $table->string('name');                // nama produk
-            $table->integer('price');              // harga
-            $table->string('image')->nullable();   // URL gambar
+            $table->id();
 
-            // 3 level kategori
-            $table->enum('main_category', ['mandiri', 'tefa']); // kategori utama
-            $table->string('department')->nullable();           // jurusan
-            $table->string('sub_department')->nullable();     // kategori produk
+            $table->string('name');
+            $table->integer('price');
+            $table->string('image')->nullable();
 
-            $table->integer('stock')->default(0);  // stok
+            $table->enum('main_category', ['mandiri', 'tefa']);
+
+            // FK
+            $table->foreignId('department_id')
+                  ->nullable()
+                  ->constrained('departments')
+                  ->nullOnDelete();
+
+            $table->foreignId('sub_department_id')
+                  ->nullable()
+                  ->constrained('sub_departments')
+                  ->nullOnDelete();
+
+            $table->integer('stock')->default(0);
             $table->timestamps();
         });
     }

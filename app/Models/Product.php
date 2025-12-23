@@ -9,26 +9,23 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $table = 'products'; // sesuai nama migration
-
     protected $fillable = [
-        'id',
         'name',
         'price',
         'image',
         'main_category',
-        'department',
-        'sub_department',
+        'department_id',
+        'sub_department_id',
         'stock',
     ];
 
-    public function departements()
+    public function department()
     {
-        return $this->belongsTo(Department::class, 'department_id');
+        return $this->belongsTo(Department::class);
     }
-    
-    public function subDepartements()
+
+    public function subDepartment()
     {
-        return $this->belongsTo(SubDepartment::class, 'sub_department_id');
+        return $this->belongsTo(SubDepartment::class);
     }
 }

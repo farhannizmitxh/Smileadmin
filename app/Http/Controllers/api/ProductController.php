@@ -13,8 +13,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::with('departements')->with('subDepartements')->get();
-        return $products;
+        return Product::with(['department', 'subDepartment'])->get();
     }
 
     /**

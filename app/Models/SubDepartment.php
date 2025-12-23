@@ -6,15 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class SubDepartment extends Model
 {
-    protected $table = 'sub_departments'; 
-
-    protected $fillable = [
-        'department_id',
-        'name',
-    ];
+    protected $fillable = ['department_id', 'name'];
 
     public function department()
     {
-        return $this->belongsTo(Department::class, 'department_id');
+        return $this->belongsTo(Department::class);
+    }
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
     }
 }
+

@@ -6,8 +6,11 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\SubDepartmentController;
 
 
+Route::get('/', function () {
+    return view('Smile');
+});
 
-
+Route::resource('products', ProductController::class);
 Route::resource('products', ProductController::class);
 
 Route::resource('departments', DepartmentController::class);
