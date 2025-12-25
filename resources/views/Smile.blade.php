@@ -152,9 +152,9 @@
                         </a>
                     </li>
                       <li class="menu-item">
-                        <a href="/room"
+                        <a href="/news"
                             target="_blank" class="menu-link">
-                            &nbsp  <div class="text-truncate" data-i18n="Email">Room</div>
+                            &nbsp  <div class="text-truncate" data-i18n="Email">Berita</div>
                         </a>
                     <li class="menu-item">
                         <a href="/room_category"

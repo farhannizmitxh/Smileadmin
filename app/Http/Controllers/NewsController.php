@@ -31,8 +31,8 @@ class NewsController extends Controller
     {
         $validated = $request->validate([
             'title'     => 'required|string|max:255',
-            'excerpt'   => 'required|integer',
-            'date'      => 'required|string',
+            'excerpt'   => 'required|string',
+            'date'      => 'required|integer',
             'writer'    => 'required|string|max:255',
             'thumbnail' => 'nullable|string',
         ]);
@@ -44,7 +44,7 @@ class NewsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(news $news)
+    public function show($id)
     {
         return response()->json(news::findOrFail($id));
     }
@@ -68,7 +68,7 @@ class NewsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(news $news)
+    public function destroy($id)
     {
         $news = news::findOrFail($id);
         $news->delete();

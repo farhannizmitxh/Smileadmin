@@ -22,7 +22,7 @@
 
             <div class="mb-3">
                 <label class="form-label fw-semibold">Excerpt</label>
-                <input type="number" name="excerpt" class="form-control" required>
+                <input type="text" name="excerpt" class="form-control" required>
             </div>
 
             <div class="mb-3">

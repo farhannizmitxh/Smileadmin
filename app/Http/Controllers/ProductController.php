@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\product;
 use Illuminate\Http\Request;
-use App\Models\Product;
 use App\Models\Department;
 use App\Models\SubDepartment;
 
 class ProductController extends Controller
 {
+
     public function index()
     {
         $products = Product::all();
@@ -17,10 +17,12 @@ class ProductController extends Controller
         return view('products.index', compact('products', 'departments', 'subdepartments'));
     }
 
-    public function show($id)
+
+    public function create()
     {
-        return response()->json(Product::findOrFail($id));
+
     }
+
 
     public function store(Request $request)
     {
@@ -38,6 +40,19 @@ class ProductController extends Controller
         return back();
     }
 
+
+    public function show($id)
+    {
+        return response()->json(Product::findOrFail($id));
+    }
+
+
+    public function edit(product $product)
+    {
+        //
+    }
+
+
     public function update(Request $request, $id)
     {
         $product = Product::findOrFail($id);
@@ -45,6 +60,7 @@ class ProductController extends Controller
 
         return response()->json($product);
     }
+
 
     public function destroy($id)
     {
